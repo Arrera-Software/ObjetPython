@@ -1,7 +1,7 @@
 from tkinter import*
-from calculeBase import*
-from calculeNombreComplex import*
-from TheoremePythagore import*
+from Calcule.calculeBase import*
+from Calcule.calculeNombreComplex import*
+from Calcule.TheoremePythagore import*
 
 class Calcule:
      
