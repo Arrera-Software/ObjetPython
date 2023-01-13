@@ -7,7 +7,7 @@ match val :
     case 1 :
         Calcule("white","black","Calcule")
     case 2 : 
-        AppHorloge("white","black")
+        AppHorloge("white","black","Horloge","acceuil")
     case other :
         print("Sa correspont pas ") 
             

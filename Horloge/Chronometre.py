@@ -2,19 +2,20 @@ import time as t
 from tkinter import *
 
 class CHRONOMETRE:
-    def __init__(self, master):
+    def __init__(self,master,mainColor,textColor):
         self.master = master
-        self.label = Label(master, text="00:00", font=("arial", 20),bg="#3c0f14",fg="white")
-        self.label.pack()
+        self.label = Label(master, text="00:00", font=("arial", 40),bg=mainColor,fg=textColor)
+        self.label.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-        self.start_button = Button(master, text="Start", command=self.start ,font=("arial", 15),bg="white",fg="black")
-        self.start_button.place(x=30,y=105)
+        self.start_button = Button(master, text="Start", command=self.start ,font=("arial", 15),bg=mainColor,fg=textColor)
+        self.start_button.place(x=40,y=215)
 
-        self.stop_button = Button(master, text="Stop", command=self.stop ,font=("arial", 15),bg="white",fg="black")
-        self.stop_button.place(x=400,y=105)
+        self.stop_button = Button(master, text="Stop", command=self.stop ,font=("arial", 15),bg=mainColor,fg=textColor)
+        self.stop_button.place(x=400,y=215)
+        
 
-        self.reset_button = Button(master, text="Reset", command=self.reset ,font=("arial", 15),bg="white",fg="black")
-        self.reset_button.place(relx=0.5, rely=0.5, anchor=CENTER)
+        self.reset_button = Button(master, text="Reset", command=self.reset ,font=("arial", 15),bg=mainColor,fg=textColor)
+        self.reset_button.place(x=215,y=315)
 
         self.is_running = False
         self.current_time = 0
