@@ -30,7 +30,12 @@ class AppHorloge :
                 self.affichageChrono()
             else : 
                 if mode == "minuteur":
-                   self.affichageMinuteur() 
+                   self.affichageMinuteur()
+                else : 
+                    if mode == "horloge":
+                        self.affichageHorloge() 
+                    else : 
+                        self.affichageAcceuil()
         self.btn1.place(x=10,y=0)
         self.btn2.place(x=90,y=0)
         self.btn3.place(x=210,y=0)
