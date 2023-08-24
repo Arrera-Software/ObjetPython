@@ -17,6 +17,10 @@ match val :
                 appClock.modeMinuteur()
             case 3 :
                 appClock.modeHorloge()
+            case 4 :
+                d = int(input(":"))
+                appClock.modeBootMinuteur(d)
+            
             case other :
                 print("Sa correspont pas ") 
 

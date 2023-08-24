@@ -27,7 +27,7 @@ class AppHorloge :
         self.screen.maxsize(500,500)
         self.screen.config(bg=self.mainColor)
         self.frameBottom = Frame(self.screen,bg=self.mainColor,width=500,height=35)
-        self.frameChrono = Frame(self.screen,bg="red",height=465,width=500)
+        self.frameChrono = Frame(self.screen,bg=self.mainColor,height=465,width=500)
         self.frameMinuteur = Frame(self.screen,bg=self.mainColor,height=465,width=500)
         self.frameHorloge = Frame(self.screen,bg=self.mainColor,height=465,width=500)
         self.btn2 = Button(self.frameBottom,text="Chronometre",font=("arial","13"),bg=self.mainColor,fg=self.textColor,command=self._affichageChrono)
@@ -62,7 +62,12 @@ class AppHorloge :
         self.objetAppMinuteur.bootAppMinuteur()
         self.frameMinuteur.place(x=0,y=0)
         self.screen.mainloop()
-        
+    
+    def modeBootMinuteur(self,duration:int) :
+        self._fenetreTK()
+        self.objetAppMinuteur.bootMinuteurInstentaner(duration)
+        self.frameMinuteur.place(x=0,y=0)
+        self.screen.mainloop()
     
     def modeHorloge(self):
         self._fenetreTK()
@@ -217,11 +222,14 @@ class AppMinuteur :
         self.labelMin.pack(side="left")
         self.entrySec.pack(side="left")
         self.labelSec.pack(side="left")
-        self.btnBoot.place(x=205,y=315)
+        self.btnBoot.place(x=185,y=315)
         self.btnPrereglage1.place(x=15,y=315)
         self.btnPrereglage2.place(x=370,y=315)
         if self.oldMinuteur != 0 :
             self.btnOldMinuteur.place(x=205,y=415)
+            
+    def bootMinuteurInstentaner(self,duration:int):
+        self.objetMinuteur.bootMinuteur(duration)
         
     def setOlminuteur(self,nb:int):
         self.oldMinuteur =  nb
